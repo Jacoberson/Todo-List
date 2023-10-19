@@ -16,16 +16,15 @@
         </h1>
         <div class="form-container" hidden>
             <form action="create-project.js" method="post" id="create-project-form">
-                <input type="text" placeholder="type a project name...">
+                <label for="project-input">
+                    <input type="text" placeholder="type a project name..." id="project-input" name="project-input" maxlength="30">
+                </label>
                 <button type="submit" id="create-project-btn">Yes</button>
                 <button type="button" id="cancel-create-project-btn">No</button>
             </form>
         </div>
-        <ul>
-            <li>project 1</li>
-            <li>project 2</li>
-            <li>project 3</li>
-            <li>project 4</li>
+        <ul id="project-list">
+            <li class="project">project 1</li>
         </ul>
     </div>
     <div class="todos">

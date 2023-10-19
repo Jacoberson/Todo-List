@@ -24,3 +24,9 @@ ul, li {
     padding: 10px 20px;
     margin-left: 10px;
 }
+
+#project-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
