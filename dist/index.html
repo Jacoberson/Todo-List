@@ -9,7 +9,18 @@
 
 <body>
     <div class="sidebar">
-        <h1>Projects<span><button>+</button></span></h1>
+        <h1>Projects
+            <span>
+                <button id="add-project-btn">+</button>
+            </span>
+        </h1>
+        <div class="form-container" hidden>
+            <form action="create-project.js" method="post" id="create-project-form">
+                <input type="text" placeholder="type a project name...">
+                <button type="submit" id="create-project-btn">Yes</button>
+                <button type="button" id="cancel-create-project-btn">No</button>
+            </form>
+        </div>
         <ul>
             <li>project 1</li>
             <li>project 2</li>
