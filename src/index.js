@@ -19,15 +19,18 @@ const formContainer = document.querySelector('.form-container');
 const addProjectBtn = document.getElementById('add-project-btn');
 addProjectBtn.addEventListener('click', () => {
     formContainer.hidden = false;
+    addProjectBtn.hidden = true;
 })
 
 const cancelProjectBtn = document.getElementById('cancel-create-project-btn');
 cancelProjectBtn.addEventListener('click', () => {
     formContainer.hidden = true;
+    addProjectBtn.hidden = false;
     form.reset();
 })
 
 const createProjectBtn = document.getElementById('create-project-btn');
 createProjectBtn.addEventListener('click', () => {
     formContainer.hidden = true;
+    addProjectBtn.hidden = false;
 })
