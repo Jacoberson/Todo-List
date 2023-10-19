@@ -18,6 +18,9 @@ ul, li {
     align-items: center;
 }
 
-.sidebar h1 {
-    text-align: center;
+.sidebar button {
+    position: relative;
+    bottom: 10%;
+    padding: 10px 20px;
+    margin-left: 10px;
 }
