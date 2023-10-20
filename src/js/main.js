@@ -66,6 +66,7 @@ cancelTodoBtn.addEventListener('click', () => {
     resetForm(projectForm);
 })
 
+// On Page Load
 const onLoad = (function () {
     const projectList = new ProjectList();
     const defaultProject = new Project('Default');

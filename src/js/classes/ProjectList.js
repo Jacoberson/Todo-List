@@ -5,8 +5,8 @@ class ProjectList {
         this.#projects.push(project);
     }
 
-    getProjects() {
-        return this.#projects;
+    static getProjects() {
+        return this.projects;
     }
 }
 

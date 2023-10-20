@@ -1,3 +1,5 @@
+import ProjectList from "./ProjectList";
+
 class Project {
     constructor(title) {
         this.title = title;
@@ -8,6 +10,7 @@ class Project {
 
         const newProject = document.createElement('li');
         newProject.classList.add('list-group-item', 'd-inline-flex', 'justify-content-between');
+        newProject.setAttribute('data-index', ProjectList.length + 1);
 
         const projectTitle = document.createElement('h4');
         projectTitle.classList.add('project-title');
