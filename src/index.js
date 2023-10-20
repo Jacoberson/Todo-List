@@ -16,13 +16,13 @@ form.addEventListener('submit', e => {
 
 const formContainer = document.querySelector('.form-container');
 
-const addProjectBtn = document.getElementById('add-project-btn');
+const addProjectBtn = document.getElementById('open-project-form');
 addProjectBtn.addEventListener('click', () => {
     formContainer.hidden = false;
     addProjectBtn.hidden = true;
 })
 
-const cancelProjectBtn = document.getElementById('cancel-create-project-btn');
+const cancelProjectBtn = document.getElementById('cancel-project-btn');
 cancelProjectBtn.addEventListener('click', () => {
     formContainer.hidden = true;
     addProjectBtn.hidden = false;
