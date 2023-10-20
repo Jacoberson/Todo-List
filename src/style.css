@@ -30,3 +30,28 @@ ul, li {
     flex-direction: column;
     gap: 20px;
 }
+
+#create-todo-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 50%;
+}
+
+#create-todo-form > .button-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.text-input, .date-input {
+    margin-bottom: 10px;
+}
+
+fieldset {
+    margin: 15px 0 25px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#create-todo-form > .button-container > button {
+    padding: 10px 20px;
+}
