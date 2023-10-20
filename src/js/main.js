@@ -3,6 +3,7 @@ import * as bootstrap from 'bootstrap'
 import { showElement, hideElement } from './helpers/visibilityChanger';
 import { submitForm, resetForm } from './helpers/formHandler';
 import Project from './classes/Project';
+import Todo from './classes/Todo';
 
 
 // Project
@@ -40,7 +41,8 @@ const todoFormContainer = document.getElementById('todo-form-container');
 const todoForm = document.getElementById('create-todo-form');
 todoForm.addEventListener('submit', event => {
     submitForm(event);
-    console.log('todo submitted');
+    Todo.create(todoForm);
+    resetForm(todoForm);
 })
 
 const openTodoForm = document.getElementById('open-todo-form');
