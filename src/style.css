@@ -18,7 +18,7 @@ ul, li {
     align-items: center;
 }
 
-#open-project-form {
+#add-project-btn {
     position: relative;
     bottom: 10%;
     padding: 10px 20px;
