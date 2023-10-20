@@ -1,18 +1,19 @@
 import './style.css';
 import { showElement, hideElement } from './helpers/visibilityChanger';
+import { submitForm, resetForm } from './helpers/formHandler';
 
 const projectList = document.getElementById('project-list');
 
-const form = document.querySelector('form');
-form.addEventListener('submit', e => {
-    e.preventDefault();
-    const inputText = form.elements['project-input'].value;
+const projectForm = document.getElementById('create-project-form');
+projectForm.addEventListener('submit', event => {
+    submitForm(event);
+    const inputText = projectForm.elements['project-input'].value;
 
     const li = document.createElement('li');
     li.classList.add('project');
     li.textContent = inputText;
     projectList.appendChild(li);
-    form.reset();
+    resetForm(projectForm);
 })
 
 const formContainer = document.querySelector('.form-container');
@@ -27,7 +28,7 @@ const cancelProjectBtn = document.getElementById('cancel-project-btn');
 cancelProjectBtn.addEventListener('click', () => {
     hideElement(formContainer);
     showElement(openProjectForm);
-    form.reset();
+    resetForm(projectForm);
 })
 
 const createProjectBtn = document.getElementById('create-project-btn');
