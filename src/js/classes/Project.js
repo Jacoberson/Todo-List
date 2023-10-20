@@ -7,8 +7,10 @@ class Project {
     }
 
     create() {
-        ProjectList.add(this);
-        createProjectHTML(this, ProjectList.projects);
+        if (this.title) {
+            ProjectList.add(this);
+            createProjectHTML(this, ProjectList.projects);
+        }
     }
 
     static edit() {

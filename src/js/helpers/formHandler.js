@@ -6,4 +6,8 @@ const resetForm = form => {
     return form.reset();
 }
 
-export { submitForm, resetForm }
+const isValid = form => {
+    return form.checkValidity();
+}
+
+export { submitForm, resetForm, isValid }

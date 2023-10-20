@@ -26,5 +26,4 @@ const createProjectHTML = (project, projectList) => {
 
 const addElement = elementType => document.createElement(elementType);
 
-
 export { createProjectHTML }

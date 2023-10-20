@@ -1,6 +1,6 @@
 import '../scss/styles.scss';
 import { showElement, hideElement } from './helpers/visibilityChanger';
-import { submitForm, resetForm } from './helpers/formHandler';
+import { submitForm, resetForm, isValid } from './helpers/formHandler';
 import Project from './classes/Project';
 import Todo from './classes/Todo';
 
@@ -24,8 +24,10 @@ openProjectForm.addEventListener('click', () => {
 
 const createProjectBtn = document.getElementById('create-project-btn');
 createProjectBtn.addEventListener('click', () => {
-    hideElement(projectFormContainer);
-    showElement(openProjectForm);
+    if (isValid(projectForm)) {
+        hideElement(projectFormContainer);
+        showElement(openProjectForm);
+    }
 })
 
 const cancelProjectBtn = document.getElementById('cancel-project-btn');
