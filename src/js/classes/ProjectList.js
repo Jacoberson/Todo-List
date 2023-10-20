@@ -1,5 +1,5 @@
 class ProjectList {
-    #projects = ['default'];
+    #projects = [];
 
     add(project) {
         this.#projects.push(project);

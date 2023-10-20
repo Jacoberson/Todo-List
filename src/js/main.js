@@ -5,19 +5,16 @@ import ProjectList from './classes/ProjectList';
 import Project from './classes/Project';
 import Todo from './classes/Todo';
 
-
 // Project
 const projectFormContainer = document.getElementById('project-form-container');
 const projectForm = document.getElementById('create-project-form');
-const projectList = new ProjectList();
-const defaultProject = new Project('Default');
-defaultProject.create();
 
 projectForm.addEventListener('submit', event => {
     submitForm(event);
     const title = document.getElementById('project-title').value;
     const newProject = new Project(title);
     newProject.create();
+    onLoad.projectList.add(newProject);
     resetForm(projectForm);
 })
 
@@ -68,3 +65,12 @@ cancelTodoBtn.addEventListener('click', () => {
     showElement(openTodoForm);
     resetForm(projectForm);
 })
+
+const onLoad = (function () {
+    const projectList = new ProjectList();
+    const defaultProject = new Project('Default');
+    defaultProject.create();
+    projectList.add(defaultProject);
+
+    return { projectList };
+})();
