@@ -1,4 +1,5 @@
-import '../../src/style.css';
+import '../scss/styles.scss';
+import * as bootstrap from 'bootstrap'
 import { showElement, hideElement } from '../helpers/visibilityChanger';
 import { submitForm, resetForm } from '../helpers/formHandler';
 import Project from '../classes/Project';
