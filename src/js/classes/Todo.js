@@ -9,10 +9,36 @@ class Todo {
             priority: form.elements['priority'].value,
         }
 
-        console.log('todo title: ' + newTodo.title);
-        console.log('todo description: ' + newTodo.description);
-        console.log('todo due date: ' + newTodo.dueDate);
-        console.log('todo priority: ' + newTodo.priority);
+        const newTodoRow = document.createElement('li');
+        newTodoRow.classList.add('list-group-item', 'd-inline-flex', 'justify-content-between')
+
+        const todoTitle = document.createElement('h4');
+        todoTitle.textContent = newTodo.title;
+        newTodoRow.appendChild(todoTitle);
+
+        const detailsBtn = document.createElement('button');
+        detailsBtn.setAttribute('type', 'button');
+        detailsBtn.classList.add('btn', 'btn-outline-primary');
+        detailsBtn.textContent = 'Edit';
+        newTodoRow.appendChild(detailsBtn);
+
+        const todoDueDate = document.createElement('p');
+        todoDueDate.textContent = newTodo.dueDate;
+        newTodoRow.appendChild(todoDueDate);
+
+        const editBtn = document.createElement('button');
+        editBtn.setAttribute('type', 'button');
+        editBtn.classList.add('btn', 'btn-outline-warning');
+        editBtn.textContent = 'Details';
+        newTodoRow.appendChild(editBtn);
+
+        const deleteBtn = document.createElement('button');
+        deleteBtn.setAttribute('type', 'button');
+        deleteBtn.classList.add('btn', 'btn-outline-danger');
+        deleteBtn.textContent = 'Details';
+        newTodoRow.appendChild(deleteBtn);
+
+        _todoList.appendChild(newTodoRow);
     }
 
     static edit() {
