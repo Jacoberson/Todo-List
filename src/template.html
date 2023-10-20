@@ -11,7 +11,7 @@
     <div class="sidebar">
         <h1>Projects
             <span>
-                <button id="open-project-form">+</button>
+                <button class="open-form" id="open-project-form">+</button>
             </span>
         </h1>
         <div id="project-form-container" class="form-container" hidden>
@@ -31,10 +31,10 @@
     <div class="todos">
         <h1>Todos
             <span>
-                <button id="open-todo-form">+</button>
+                <button class="open-form" id="open-todo-form">+</button>
             </span>
         </h1>
-        <div id="todo-form-container" class="form-container">
+        <div id="todo-form-container" class="form-container" hidden>
             <form action="create-todo.js" method="post" id="create-todo-form">
                 <label for="todo-title">Title:</label>
                 <input class="text-input" type="text" placeholder="type a todo title..." id="todo-title" name="todo-title" maxlength="30">

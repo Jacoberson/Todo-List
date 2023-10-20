@@ -2,12 +2,16 @@ body {
     display: grid;
     grid-template-columns: 1fr 2fr;
     height: 95vh;
-    gap: 80px;
+    gap: 50px;
 }
 
 ul, li {
     list-style: none;
     padding: 0;
+}
+
+input[type=text], input[type=date] {
+    padding: 5px 10px;
 }
 
 .sidebar {
@@ -18,9 +22,9 @@ ul, li {
     align-items: center;
 }
 
-#add-project-btn {
+.open-form {
     position: relative;
-    bottom: 10%;
+    bottom: 5px;
     padding: 10px 20px;
     margin-left: 10px;
 }
@@ -44,6 +48,10 @@ ul, li {
 
 .text-input, .date-input {
     margin-bottom: 10px;
+}
+
+textarea {
+    resize: none;
 }
 
 fieldset {
