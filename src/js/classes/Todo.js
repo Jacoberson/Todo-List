@@ -19,7 +19,7 @@ class Todo {
         const detailsBtn = document.createElement('button');
         detailsBtn.setAttribute('type', 'button');
         detailsBtn.classList.add('btn', 'btn-outline-primary');
-        detailsBtn.textContent = 'Edit';
+        detailsBtn.textContent = 'Details';
         newTodoRow.appendChild(detailsBtn);
 
         const todoDueDate = document.createElement('p');
@@ -29,7 +29,7 @@ class Todo {
         const editBtn = document.createElement('button');
         editBtn.setAttribute('type', 'button');
         editBtn.classList.add('btn', 'btn-outline-warning');
-        editBtn.textContent = 'Details';
+        editBtn.textContent = 'Edit';
         newTodoRow.appendChild(editBtn);
 
         const deleteBtn = document.createElement('button');

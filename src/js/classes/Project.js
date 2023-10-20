@@ -6,8 +6,24 @@ class Project {
 
         if (inputText !== '') {
             const newProject = document.createElement('li');
-            newProject.classList.add('project', 'list-group-item');
-            newProject.textContent = inputText;
+            newProject.classList.add('list-group-item', 'd-inline-flex', 'justify-content-between');
+
+            const projectTitle = document.createElement('h4');
+            projectTitle.textContent = inputText
+            newProject.appendChild(projectTitle);
+            
+            const editBtn = document.createElement('button');
+            editBtn.setAttribute('type', 'button');
+            editBtn.classList.add('btn', 'btn-outline-warning');
+            editBtn.textContent = 'Edit';
+            newProject.appendChild(editBtn);
+    
+            const deleteBtn = document.createElement('button');
+            deleteBtn.setAttribute('type', 'button');
+            deleteBtn.classList.add('btn', 'btn-outline-danger');
+            deleteBtn.textContent = 'Details';
+            newProject.appendChild(deleteBtn);
+
             _projectList.appendChild(newProject);
         }
     }
