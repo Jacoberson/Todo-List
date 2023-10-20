@@ -8,28 +8,29 @@ class Project {
     create() {
         const _projectList = document.querySelector('#project-list > div');
 
-        const newProject = document.createElement('li');
-        newProject.classList.add('list-group-item', 'd-inline-flex', 'justify-content-between');
-        newProject.setAttribute('data-index', ProjectList.length + 1);
+        const newProjectRow = document.createElement('li');
+        newProjectRow.classList.add('list-group-item', 'd-inline-flex', 'justify-content-between');
+        newProjectRow.setAttribute('data-index', ProjectList.length + 1);
 
         const projectTitle = document.createElement('h4');
         projectTitle.classList.add('project-title');
         projectTitle.textContent = this.title;
-        newProject.appendChild(projectTitle);
+        newProjectRow.appendChild(projectTitle);
 
         const editBtn = document.createElement('button');
         editBtn.setAttribute('type', 'button');
         editBtn.classList.add('edit-project-btn', 'btn', 'btn-outline-warning');
         editBtn.textContent = 'Edit';
-        newProject.appendChild(editBtn);
+        newProjectRow.appendChild(editBtn);
 
         const deleteBtn = document.createElement('button');
         deleteBtn.setAttribute('type', 'button');
         deleteBtn.classList.add('delete-project-btn', 'btn', 'btn-outline-danger');
         deleteBtn.textContent = 'Details';
-        newProject.appendChild(deleteBtn);
+        newProjectRow.appendChild(deleteBtn);
 
-        _projectList.appendChild(newProject);
+        ProjectList.add(this);
+        _projectList.appendChild(newProjectRow);
     }
 
     static edit() {

@@ -68,10 +68,6 @@ cancelTodoBtn.addEventListener('click', () => {
 
 // On Page Load
 const onLoad = (function () {
-    const projectList = new ProjectList();
     const defaultProject = new Project('Default');
     defaultProject.create();
-    projectList.add(defaultProject);
-
-    return { projectList };
 })();
