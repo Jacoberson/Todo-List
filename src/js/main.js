@@ -1,7 +1,6 @@
 import '../scss/styles.scss';
 import { showElement, hideElement } from './helpers/visibilityChanger';
 import { submitForm, resetForm } from './helpers/formHandler';
-import ProjectList from './classes/ProjectList';
 import Project from './classes/Project';
 import Todo from './classes/Todo';
 
@@ -14,7 +13,6 @@ projectForm.addEventListener('submit', event => {
     const title = document.getElementById('project-title').value;
     const newProject = new Project(title);
     newProject.create();
-    onLoad.projectList.add(newProject);
     resetForm(projectForm);
 })
 

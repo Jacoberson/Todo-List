@@ -1,12 +1,8 @@
 class ProjectList {
-    static #projects = [];
+    static projects = [];
 
     static add(project) {
-        this.#projects.push(project);
-    }
-
-    static getProjects() {
-        return this.#projects;
+        this.projects.push(project);
     }
 }
 
