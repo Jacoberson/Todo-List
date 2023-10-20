@@ -1,22 +1,17 @@
 import './style.css';
 import { showElement, hideElement } from './helpers/visibilityChanger';
 import { submitForm, resetForm } from './helpers/formHandler';
+import Project from './classes/Project';
 
-const projectList = document.getElementById('project-list');
+const formContainer = document.querySelector('.form-container');
 
+// Project
 const projectForm = document.getElementById('create-project-form');
 projectForm.addEventListener('submit', event => {
     submitForm(event);
-    const inputText = projectForm.elements['project-input'].value;
-
-    const li = document.createElement('li');
-    li.classList.add('project');
-    li.textContent = inputText;
-    projectList.appendChild(li);
+    Project.create(projectForm);
     resetForm(projectForm);
 })
-
-const formContainer = document.querySelector('.form-container');
 
 const openProjectForm = document.getElementById('open-project-form');
 openProjectForm.addEventListener('click', () => {
