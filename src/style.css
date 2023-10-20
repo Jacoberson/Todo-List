@@ -5,12 +5,14 @@ body {
     gap: 50px;
 }
 
-ul, li {
+ul,
+li {
     list-style: none;
     padding: 0;
 }
 
-input[type=text], input[type=date] {
+input[type=text],
+input[type=date] {
     padding: 5px 10px;
 }
 
@@ -22,11 +24,26 @@ input[type=text], input[type=date] {
     align-items: center;
 }
 
-.open-form {
-    position: relative;
-    bottom: 5px;
-    padding: 10px 20px;
+.open-form-btn {
     margin-left: 10px;
+}
+
+.form-btn,
+.open-form-btn {
+    border: none;
+    background-color: #fff;
+    cursor: pointer;
+    padding: 0;
+}
+
+.round-btn {
+    border-radius: 100%;
+}
+
+
+.open-form-btn:hover,
+.form-btn:hover {
+    filter: saturate(450%);
 }
 
 #project-list {
@@ -41,12 +58,13 @@ input[type=text], input[type=date] {
     max-width: 50%;
 }
 
-#create-todo-form > .button-container {
+#create-todo-form>.button-container {
     display: flex;
     justify-content: space-around;
 }
 
-.text-input, .date-input {
+.text-input,
+.date-input {
     margin-bottom: 10px;
 }
 
@@ -60,6 +78,6 @@ fieldset {
     justify-content: space-between;
 }
 
-#create-todo-form > .button-container > button {
+#create-todo-form>.button-container>button {
     padding: 10px 20px;
 }
