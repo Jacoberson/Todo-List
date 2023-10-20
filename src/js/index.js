@@ -1,7 +1,7 @@
-import './style.css';
-import { showElement, hideElement } from './helpers/visibilityChanger';
-import { submitForm, resetForm } from './helpers/formHandler';
-import Project from './classes/Project';
+import '../../src/style.css';
+import { showElement, hideElement } from '../helpers/visibilityChanger';
+import { submitForm, resetForm } from '../helpers/formHandler';
+import Project from '../classes/Project';
 
 
 // Project
