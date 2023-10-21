@@ -24,11 +24,15 @@ const createProjectHTML = (project, projectList) => {
 }
 
 const renderProjectTodos = project => {
-    console.log(project.displayTodos());
+    const todoList = document.querySelector('#todo-list > div');
+    todoList.innerHTML = '';
+
+    project.todoList.forEach(todo => {
+        createTodoHTML(todoList, todo);
+    })
 }
 
-const createTodoHTML = todo => {
-    const _todoList = document.querySelector('#todo-list > div');
+const createTodoHTML = (todoList, todo) => {
     const newTodoRow = document.createElement('li');
     newTodoRow.classList.add('list-group-item', 'd-inline-flex', 'justify-content-between')
 
@@ -55,12 +59,12 @@ const createTodoHTML = todo => {
     const deleteBtn = document.createElement('button');
     deleteBtn.setAttribute('type', 'button');
     deleteBtn.classList.add('btn', 'btn-outline-danger');
-    deleteBtn.textContent = 'Details';
+    deleteBtn.textContent = 'Delete';
     newTodoRow.appendChild(deleteBtn);
 
-    _todoList.appendChild(newTodoRow);
+    todoList.appendChild(newTodoRow);
 }
 
 const addElement = elementType => document.createElement(elementType);
 
-export { createProjectHTML, createTodoHTML }
+export { createProjectHTML, createTodoHTML, renderProjectTodos }

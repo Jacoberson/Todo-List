@@ -1,4 +1,4 @@
-import { createTodoHTML } from '../helpers/DOMUpdater';
+import { createTodoHTML, renderProjectTodos } from '../helpers/DOMUpdater';
 
 class Todo {
     constructor(title, description, dueDate, priority, parentProject) {
@@ -11,10 +11,9 @@ class Todo {
 
     create() {
         if (this.title && this.description && this.dueDate && this.priority) {
-            createTodoHTML(this);
             this.parentProject.addTodo(this);
+            renderProjectTodos(this.parentProject);
         }
-
     }
 
     static edit() {
