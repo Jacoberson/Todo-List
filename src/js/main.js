@@ -45,6 +45,8 @@ todoForm.addEventListener('submit', event => {
     submitForm(event);
     Todo.create(todoForm);
     resetForm(todoForm);
+
+    // add to project
 })
 
 const openTodoForm = document.getElementById('open-todo-form');

@@ -4,6 +4,7 @@ import { createProjectHTML } from '../helpers/DOMUpdater';
 class Project {
     constructor(title) {
         this.title = title;
+        this.todoList = ['test'];
     }
 
     create() {
