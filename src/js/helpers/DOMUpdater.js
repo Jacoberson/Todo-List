@@ -2,6 +2,9 @@ const createProjectHTML = (project, projectList) => {
     const _projectList = document.querySelector('#project-list > div');
     const newProjectRow = addElement('li');
     newProjectRow.classList.add('list-group-item', 'd-inline-flex', 'justify-content-between');
+    if (projectList.length === 1) {
+        newProjectRow.classList.add('selected-project');
+    }
     newProjectRow.setAttribute('data-index', projectList.length);
 
     const projectTitle = addElement('h4');
