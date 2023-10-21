@@ -6,6 +6,12 @@ const createProjectHTML = (project, projectList) => {
         newProjectRow.classList.add('selected-project');
     }
     newProjectRow.setAttribute('data-index', projectList.length);
+    newProjectRow.addEventListener('click', () => {
+        const currentSelectedProject = document.querySelector('.selected-project');
+        currentSelectedProject.classList.remove('selected-project');
+        
+        newProjectRow.classList.add('selected-project');
+    })
 
     const projectTitle = addElement('h4');
     projectTitle.classList.add('project-title');
