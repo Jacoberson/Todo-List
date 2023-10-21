@@ -56,24 +56,22 @@
                         <div class="mb-3">
                             <div class="form-floating mb-3">
                                 <input class="form-control form-control-sm" type="text"
-                                    placeholder="type a todo title..." id="todo-title" name="todo-title" maxlength="30">
+                                    placeholder="type a todo title..." id="todo-title" name="todo-title" maxlength="30" required>
                                 <label for="todo-title">Todo Title</label>
 
                             </div>
                         </div>
                         <div class="form-floating mb-3">
                             <textarea class="form-control form-control-sm" id="todo-description" name="todo-description"
-                                style="height: 120px"></textarea>
+                                style="height: 120px" required></textarea>
                             <label for="todo-description">Description</label>
                         </div>
                         <div class="floating-form mb-3">
                             <label for="due-date">Due Date</label>
-
-                            <input class="form-control form-control-sm" type="date" id="due-date" name="due-date">
-
+                            <input class="form-control form-control-sm" type="date" id="due-date" name="due-date" required>
                         </div>
                         <label>Priority:</label>
-                        <div class="btn-group form-control mb-5" role="group" aria-label="priority button group">
+                        <div class="btn-group form-control mb-5" role="group" aria-label="priority button group" required>
                             <input type="radio" class="btn-check" name="priority" id="low" value="low" checked>
                             <label class="btn btn-outline-success" for="low">Low</label>
                             <input type="radio" class="btn-check" name="priority" id="medium" value="medium">
