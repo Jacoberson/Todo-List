@@ -9,18 +9,6 @@ const createProjectHTML = (project, projectList) => {
     projectTitle.textContent = project.title;
     newProjectRow.appendChild(projectTitle);
 
-    const editBtn = addElement('button');
-    editBtn.setAttribute('type', 'button');
-    editBtn.classList.add('edit-project-btn', 'btn', 'btn-outline-warning');
-    editBtn.textContent = 'Edit';
-    newProjectRow.appendChild(editBtn);
-
-    const deleteBtn = addElement('button');
-    deleteBtn.setAttribute('type', 'button');
-    deleteBtn.classList.add('delete-project-btn', 'btn', 'btn-outline-danger');
-    deleteBtn.textContent = 'Details';
-    newProjectRow.appendChild(deleteBtn);
-
     _projectList.appendChild(newProjectRow);
 }
 
