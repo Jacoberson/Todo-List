@@ -1,5 +1,5 @@
 import ProjectList from "./ProjectList";
-import { createProjectHTML } from '../helpers/DOMUpdater';
+import { createProjectHTML, renderProjectTodos } from '../helpers/DOMUpdater';
 
 class Project {
     constructor(title) {
@@ -16,11 +16,16 @@ class Project {
     }
 
     displayTodos() {
-        return this.todoList;
+        return renderProjectTodos(this);
     }
 
     addTodo(todo) {
         return this.todoList.push(todo)
+    }
+
+    removeTodo(removedTodo) {
+        this.todoList.splice(this.todoList.findIndex(todo => todo.index == removedTodo.index - 1), 1);
+        this.displayTodos();
     }
 
     static edit() {

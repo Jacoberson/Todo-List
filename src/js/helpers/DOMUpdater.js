@@ -33,8 +33,11 @@ const renderProjectTodos = project => {
 }
 
 const createTodoHTML = (todoList, todo) => {
+    const parentProject = todo.parentProject;
+
     const newTodoRow = document.createElement('li');
     newTodoRow.classList.add('list-group-item', 'd-inline-flex', 'justify-content-between')
+    newTodoRow.setAttribute('data-index', todo.parentProject.todoList.length);
 
     const todoTitle = document.createElement('h4');
     todoTitle.textContent = todo.title;
@@ -60,6 +63,9 @@ const createTodoHTML = (todoList, todo) => {
     deleteBtn.setAttribute('type', 'button');
     deleteBtn.classList.add('btn', 'btn-outline-danger');
     deleteBtn.textContent = 'Delete';
+    deleteBtn.addEventListener('click', () => {
+        parentProject.removeTodo(parentProject.todoList.find(todo => todo.index == newTodoRow.getAttribute('data-index')));
+    })
     newTodoRow.appendChild(deleteBtn);
 
     todoList.appendChild(newTodoRow);
@@ -67,4 +73,4 @@ const createTodoHTML = (todoList, todo) => {
 
 const addElement = elementType => document.createElement(elementType);
 
-export { createProjectHTML, createTodoHTML, renderProjectTodos }
+export { createProjectHTML, renderProjectTodos }

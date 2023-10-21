@@ -1,4 +1,4 @@
-import { createTodoHTML, renderProjectTodos } from '../helpers/DOMUpdater';
+import { renderProjectTodos } from '../helpers/DOMUpdater';
 
 class Todo {
     constructor(title, description, dueDate, priority, parentProject) {
@@ -7,6 +7,7 @@ class Todo {
         this.dueDate = dueDate;
         this.priority = priority;
         this.parentProject = parentProject;
+        this.index = this.parentProject.todoList.length + 1;
     }
 
     create() {
