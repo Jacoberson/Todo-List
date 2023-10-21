@@ -1,4 +1,4 @@
-import { renderProjectTodos } from '../helpers/DOMUpdater';
+import { renderProjectTodos, changeCompleteHTML } from '../helpers/DOMUpdater';
 
 class Todo {
     constructor(title, description, dueDate, priority, parentProject) {
@@ -8,6 +8,7 @@ class Todo {
         this.priority = priority;
         this.parentProject = parentProject;
         this.index = this.parentProject.todoList.length + 1;
+        this.isComplete = false;
     }
 
     create() {
@@ -15,6 +16,11 @@ class Todo {
             this.parentProject.addTodo(this);
             renderProjectTodos(this.parentProject);
         }
+    }
+
+    changeComplete(newTodoRow) {
+        this.isComplete = !this.isComplete;
+        changeCompleteHTML(this, newTodoRow);
     }
 
     static edit() {

@@ -39,6 +39,14 @@ const createTodoHTML = (todoList, todo) => {
     newTodoRow.classList.add('list-group-item', 'd-inline-flex', 'justify-content-between')
     newTodoRow.setAttribute('data-index', todo.parentProject.todoList.length);
 
+    const todoCheckbox = document.createElement('input');
+    todoCheckbox.setAttribute('type', 'checkbox');
+    todoCheckbox.classList.add('form-check-input');
+    todoCheckbox.addEventListener('click', () => {
+        todo.changeComplete(newTodoRow);
+    })
+    newTodoRow.appendChild(todoCheckbox);
+
     const todoTitle = document.createElement('h4');
     todoTitle.textContent = todo.title;
     newTodoRow.appendChild(todoTitle);
@@ -71,6 +79,14 @@ const createTodoHTML = (todoList, todo) => {
     todoList.appendChild(newTodoRow);
 }
 
+const changeCompleteHTML = (todo, todoHTML) => {
+    // console.log(todo.isComplete === false);
+    todo.isComplete === false ?
+    todoHTML.classList.remove('complete') :
+    todoHTML.classList.add('complete')
+
+}
+
 const addElement = elementType => document.createElement(elementType);
 
-export { createProjectHTML, renderProjectTodos }
+export { createProjectHTML, renderProjectTodos, changeCompleteHTML }
