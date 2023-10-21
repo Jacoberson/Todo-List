@@ -5,6 +5,7 @@ class Project {
     constructor(title) {
         this.title = title;
         this.todoList = ['test'];
+        this.index = ProjectList.projects.length + 1;
     }
 
     create() {
@@ -12,6 +13,10 @@ class Project {
             ProjectList.add(this);
             createProjectHTML(this, ProjectList.projects);
         }
+    }
+
+    displayTodos() {
+        return this.todoList;
     }
 
     static edit() {

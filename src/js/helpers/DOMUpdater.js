@@ -10,8 +10,9 @@ const createProjectHTML = (project, projectList) => {
     newProjectRow.addEventListener('click', () => {
         const currentSelectedProject = document.querySelector('.selected-project');
         currentSelectedProject.classList.remove('selected-project');
-        
+
         newProjectRow.classList.add('selected-project');
+        renderProjectTodos(projectList.find(project => project.index === Number(newProjectRow.getAttribute('data-index'))));
     })
 
     const projectTitle = addElement('h4');
@@ -20,6 +21,10 @@ const createProjectHTML = (project, projectList) => {
     newProjectRow.appendChild(projectTitle);
 
     _projectList.appendChild(newProjectRow);
+}
+
+const renderProjectTodos = project => {
+    console.log(project.displayTodos());
 }
 
 const addElement = elementType => document.createElement(elementType);
