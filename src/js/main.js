@@ -43,7 +43,12 @@ const todoFormContainer = document.getElementById('todo-form-container');
 const todoForm = document.getElementById('create-todo-form');
 todoForm.addEventListener('submit', event => {
     submitForm(event);
-    Todo.create(todoForm);
+    const title = todoForm.elements['todo-title'].value;
+    const description = todoForm.elements['todo-description'].value;
+    const dueDate = todoForm.elements['due-date'].value;
+    const priority = todoForm.elements['priority'].value;
+    const newTodo = new Todo(title, description, dueDate, priority);
+    newTodo.create();
     resetForm(todoForm);
 
     // add to project
@@ -57,8 +62,10 @@ openTodoForm.addEventListener('click', () => {
 
 const createTodoBtn = document.getElementById('create-todo-btn');
 createTodoBtn.addEventListener('click', () => {
-    hideElement(todoFormContainer);
-    showElement(openTodoForm);
+    if (isValid(todoForm)) {
+        hideElement(todoFormContainer);
+        showElement(openTodoForm);
+    }
 })
 
 const cancelTodoBtn = document.getElementById('cancel-todo-btn');
