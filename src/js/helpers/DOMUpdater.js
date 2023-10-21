@@ -6,6 +6,7 @@ const createProjectHTML = (project, projectList) => {
         newProjectRow.classList.add('selected-project');
     }
     newProjectRow.setAttribute('data-index', projectList.length);
+    newProjectRow.setAttribute('role', 'button');
     newProjectRow.addEventListener('click', () => {
         const currentSelectedProject = document.querySelector('.selected-project');
         currentSelectedProject.classList.remove('selected-project');
