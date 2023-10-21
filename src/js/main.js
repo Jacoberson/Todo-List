@@ -1,6 +1,7 @@
 import '../scss/styles.scss';
 import { showElement, hideElement } from './helpers/visibilityChanger';
 import { submitForm, resetForm, isValid } from './helpers/formHandler';
+import ProjectList from './classes/ProjectList';
 import Project from './classes/Project';
 import Todo from './classes/Todo';
 
@@ -47,7 +48,9 @@ todoForm.addEventListener('submit', event => {
     const description = todoForm.elements['todo-description'].value;
     const dueDate = todoForm.elements['due-date'].value;
     const priority = todoForm.elements['priority'].value;
-    const newTodo = new Todo(title, description, dueDate, priority);
+    const projectIndex = document.querySelector('.selected-project').getAttribute('data-index');
+    const parentProject = ProjectList.getProject(projectIndex)
+    const newTodo = new Todo(title, description, dueDate, priority, parentProject);
     newTodo.create();
     resetForm(todoForm);
 

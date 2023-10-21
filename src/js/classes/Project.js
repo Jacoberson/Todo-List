@@ -4,7 +4,7 @@ import { createProjectHTML } from '../helpers/DOMUpdater';
 class Project {
     constructor(title) {
         this.title = title;
-        this.todoList = ['test'];
+        this.todoList = [];
         this.index = ProjectList.projects.length + 1;
     }
 
@@ -17,6 +17,10 @@ class Project {
 
     displayTodos() {
         return this.todoList;
+    }
+
+    addTodo(todo) {
+        return this.todoList.push(todo)
     }
 
     static edit() {

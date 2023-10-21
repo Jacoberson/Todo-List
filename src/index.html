@@ -56,7 +56,8 @@
                         <div class="mb-3">
                             <div class="form-floating mb-3">
                                 <input class="form-control form-control-sm" type="text"
-                                    placeholder="type a todo title..." id="todo-title" name="todo-title" maxlength="30" required>
+                                    placeholder="type a todo title..." id="todo-title" name="todo-title" maxlength="30"
+                                    required>
                                 <label for="todo-title">Todo Title</label>
 
                             </div>
@@ -68,10 +69,12 @@
                         </div>
                         <div class="floating-form mb-3">
                             <label for="due-date">Due Date</label>
-                            <input class="form-control form-control-sm" type="date" id="due-date" name="due-date" required>
+                            <input class="form-control form-control-sm" type="date" id="due-date" name="due-date"
+                                required>
                         </div>
                         <label>Priority:</label>
-                        <div class="btn-group form-control mb-5" role="group" aria-label="priority button group" required>
+                        <div class="btn-group form-control mb-5" role="group" aria-label="priority button group"
+                            required>
                             <input type="radio" class="btn-check" name="priority" id="low" value="low" checked>
                             <label class="btn btn-outline-success" for="low">Low</label>
                             <input type="radio" class="btn-check" name="priority" id="medium" value="medium">
@@ -92,13 +95,6 @@
                 <div class="container">
                     <ul id="todo-list" class="list-group list-group-numbered mt-5">
                         <div class="row gy-3">
-                            <li class="list-group-item d-inline-flex justify-content-between">
-                                <h4>Title</h4>
-                                <button type="button" class="btn btn-outline-primary">Details</button>
-                                <p>Date (Month, Day)</p>
-                                <button type="button" class="btn btn-outline-warning">Edit</button>
-                                <button type="button" class="btn btn-outline-danger">Delete</button>
-                            </li>
                         </div>
                     </ul>
                 </div>
