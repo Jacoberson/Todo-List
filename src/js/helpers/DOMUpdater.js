@@ -1,7 +1,7 @@
 const createProjectHTML = (project, projectList) => {
     const _projectList = document.querySelector('#project-list > div');
     const newProjectRow = addElement('li');
-    newProjectRow.classList.add('list-group-item', 'd-inline-flex', 'justify-content-between');
+    newProjectRow.classList.add('list-group-item', 'd-inline-flex', 'justify-content-between', 'project');
     if (projectList.length === 1) {
         newProjectRow.classList.add('selected-project');
     }
@@ -34,9 +34,10 @@ const renderProjectTodos = project => {
 
 const createTodoHTML = (todoList, todo) => {
     const parentProject = todo.parentProject;
+    const priorityClass = todo.priority;
 
     const newTodoRow = document.createElement('li');
-    newTodoRow.classList.add('list-group-item', 'd-inline-flex', 'justify-content-between')
+    newTodoRow.classList.add('list-group-item', 'd-inline-flex', 'justify-content-between', 'todo', priorityClass);
     newTodoRow.setAttribute('data-index', todo.parentProject.todoList.length);
 
     const todoCheckbox = document.createElement('input');

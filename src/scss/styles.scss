@@ -8,3 +8,24 @@
 .complete {
     text-decoration: line-through;
 }
+
+input[type=checkbox] {
+    border: 1px solid rgb(13, 110, 253);
+}
+
+
+.list-group-item.project, .list-group-item.todo {
+    border: 1px solid #8a8787;
+}
+
+.todo.low {
+    border-left: 10px solid $success;
+}
+
+.todo.medium {
+    border-left: 10px solid $warning;
+}
+
+.todo.high {
+    border-left: 10px solid $danger;
+}
